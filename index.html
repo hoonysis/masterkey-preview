@@ -2337,18 +2337,29 @@
 
     /* 03 BAECHU */
     .baechu-bubble {
-      margin: 36px 0 28px;
-      padding: 32px 28px;
+      margin: 40px 0 32px;
+      padding: 38px 30px 34px;
       background: #fff;
       border: 1.5px solid var(--line);
-      border-radius: 22px;
-      box-shadow: 0 18px 40px rgba(17, 24, 39, 0.08);
+      border-radius: 24px;
+      box-shadow: 0 22px 52px rgba(17, 24, 39, 0.1);
       position: relative;
+    }
+    .baechu-bubble::after {
+      content: "“";
+      position: absolute;
+      top: -28px;
+      left: 24px;
+      font-family: "GmarketSans", Georgia, serif;
+      font-size: 110px;
+      line-height: 1;
+      color: var(--orange);
+      opacity: 0.85;
     }
     .baechu-bubble::before {
       content: "";
       position: absolute;
-      left: 38px;
+      left: 44px;
       bottom: -16px;
       width: 28px;
       height: 28px;
@@ -2359,14 +2370,25 @@
     }
     .baechu-question {
       margin: 0;
-      font-size: 24px;
+      font-size: 25px;
       line-height: 1.55;
       font-weight: 600;
       color: var(--ink);
       letter-spacing: -0.01em;
     }
+    .baechu-speaker {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(238, 120, 27, 0.12);
+      color: var(--orange);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
     .baechu-after {
-      margin: 36px 0 0;
+      margin: 44px 0 0;
       font-size: 22px;
       line-height: 1.6;
       color: var(--ink);
@@ -2374,45 +2396,223 @@
     }
 
     /* 04 SENTENCE PROBLEM */
-    .sentence-problem-line {
+    .sentence-pool {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
       margin: 28px 0 24px;
+    }
+    .sentence-chip {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1.5px solid var(--line);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .sentence-chip.faded {
+      background: transparent;
+      border-style: dashed;
+      border-color: rgba(17, 24, 39, 0.18);
+      color: rgba(17, 24, 39, 0.32);
+      font-weight: 500;
+    }
+    .sentence-chip.hit {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: #fff;
+    }
+    .sentence-problem-line {
+      margin: 8px 0 22px;
       font-size: 22px;
       line-height: 1.55;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--ink);
     }
     .sentence-problem-tail {
       margin: 0;
-      font-size: 20px;
-      line-height: 1.6;
-      color: var(--muted);
+      padding: 18px 20px;
+      border-left: 3px solid var(--orange);
+      background: #fff;
+      border-radius: 0 14px 14px 0;
+      font-size: 19px;
+      line-height: 1.55;
+      color: var(--ink);
       font-weight: 500;
     }
 
     /* 05 BRIDGE */
+    .transition-cut .bridge-stat {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 28px 0 22px;
+    }
+    .bridge-stat-card {
+      padding: 22px 16px 20px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      text-align: center;
+    }
+    .bridge-stat-card .num {
+      display: block;
+      font-family: "GmarketSans", "Pretendard Variable", sans-serif;
+      font-size: 44px;
+      font-weight: 700;
+      color: var(--yellow);
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+    .bridge-stat-card .num small {
+      font-size: 22px;
+      margin-left: 2px;
+    }
+    .bridge-stat-card .label {
+      display: block;
+      margin-top: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.75);
+      letter-spacing: 0.02em;
+    }
+    .bridge-headline {
+      margin: 0 0 4px;
+      font-size: 30px;
+      line-height: 1.4;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.01em;
+    }
     .bridge-sub {
-      margin: 28px 0 0;
-      font-size: 20px;
-      line-height: 1.6;
+      margin: 22px 0 0;
+      font-size: 17px;
+      line-height: 1.65;
       color: rgba(255, 255, 255, 0.78);
       font-weight: 500;
+    }
+    .bridge-sources {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0 0;
+    }
+    .bridge-source-chip {
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 216, 92, 0.16);
+      color: var(--yellow);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    /* 09·10 GIF placeholder 강화 */
+    .gif-placeholder.rich {
+      position: relative;
+      margin: 28px 0 0;
+      padding: 0;
+      border: none;
+      background: linear-gradient(135deg, rgba(255, 216, 92, 0.16), rgba(238, 120, 27, 0.1));
+      border-radius: 22px;
+      overflow: hidden;
+    }
+    .gif-placeholder.rich .placeholder-frame {
+      aspect-ratio: 4 / 3;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      background: repeating-linear-gradient(
+        135deg,
+        rgba(17, 24, 39, 0.04) 0,
+        rgba(17, 24, 39, 0.04) 12px,
+        transparent 12px,
+        transparent 24px
+      );
+    }
+    .gif-placeholder.rich .play-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 28px rgba(238, 120, 27, 0.3);
+    }
+    .gif-placeholder.rich .play-icon::before {
+      content: "▶";
+      font-size: 18px;
+      margin-left: 4px;
+    }
+    .gif-placeholder.rich .placeholder-text {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: 0.02em;
+    }
+    .gif-placeholder.rich .placeholder-sub {
+      margin-top: -6px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .activity-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0 18px 18px;
+      justify-content: center;
+    }
+    .activity-chip {
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid rgba(17, 24, 39, 0.1);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
     }
 
     /* 13 RECORD BEFORE/AFTER */
     .ba-row {
+      position: relative;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin: 36px 0 24px;
+      gap: 14px;
+      margin: 36px 0 0;
+    }
+    .ba-row::before {
+      content: "→";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 700;
+      box-shadow: 0 10px 22px rgba(238, 120, 27, 0.3);
+      z-index: 2;
     }
     .ba-card {
-      padding: 24px 20px;
+      padding: 22px 18px;
       border-radius: 18px;
       background: #fff;
       border: 1.5px solid var(--line);
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
     }
     .ba-card.before {
       background: #f3f1ec;
@@ -2420,6 +2620,7 @@
     }
     .ba-card.after {
       border-color: var(--orange);
+      background: linear-gradient(180deg, #fff, #fff5ec);
       box-shadow: 0 16px 36px rgba(238, 120, 27, 0.12);
     }
     .ba-label {
@@ -2428,16 +2629,16 @@
       padding: 4px 10px;
       border-radius: 999px;
       background: rgba(17, 24, 39, 0.08);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
     }
     .ba-card.after .ba-label {
       background: var(--orange);
       color: #fff;
     }
     .ba-card strong {
-      font-size: 22px;
+      font-size: 19px;
       font-weight: 700;
       color: var(--ink);
     }
@@ -2446,39 +2647,107 @@
     }
     .ba-card p {
       margin: 0;
-      font-size: 15px;
+      font-size: 14px;
       line-height: 1.55;
     }
+    .ba-checks {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .ba-check {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .ba-check::before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      border: 1.5px solid currentColor;
+      flex-shrink: 0;
+    }
+    .ba-card.before .ba-check {
+      color: rgba(17, 24, 39, 0.32);
+    }
+    .ba-card.after .ba-check {
+      color: var(--green);
+    }
+    .ba-card.after .ba-check::before {
+      background: var(--green);
+      border-color: var(--green);
+      content: "✓";
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-    /* 15 TESTIMONIAL PLACEHOLDER */
-    .testimonial-placeholder {
+    /* 15 TESTIMONIAL */
+    .testimonial-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
       margin: 28px 0 0;
-      padding: 56px 28px;
-      border: 2px dashed rgba(17, 24, 39, 0.25);
-      border-radius: 18px;
+    }
+    .testimonial-card {
+      padding: 22px 20px;
       background: #fff;
-      text-align: center;
+      border: 1.5px dashed rgba(17, 24, 39, 0.2);
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
-    .placeholder-title {
-      margin: 0 0 8px;
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--ink);
+    .testimonial-card.placeholder {
+      opacity: 0.7;
     }
-    .placeholder-note {
-      margin: 0;
+    .testimonial-stars {
+      color: var(--orange);
       font-size: 14px;
+      letter-spacing: 0.08em;
+    }
+    .testimonial-quote {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: rgba(17, 24, 39, 0.55);
+      font-style: italic;
+    }
+    .testimonial-meta {
+      display: flex;
+      gap: 8px;
+      font-size: 12px;
       color: var(--muted);
+      font-weight: 600;
+    }
+    .testimonial-note {
+      margin: 18px 0 0;
+      padding: 14px 16px;
+      background: rgba(238, 120, 27, 0.08);
+      border-radius: 12px;
+      font-size: 13px;
+      color: var(--orange);
+      font-weight: 600;
+      text-align: center;
     }
 
     /* 16 PRICE ANCHOR */
     .anchor-row {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 18px;
+      gap: 14px;
       margin: 32px 0 0;
+      position: relative;
     }
     .anchor-card {
+      position: relative;
       padding: 24px 22px 22px;
       border-radius: 20px;
       background: #fff;
@@ -2491,18 +2760,24 @@
       background: #f3f1ec;
       color: #5b6473;
     }
+    .anchor-card.legacy ul li {
+      text-decoration: line-through;
+      text-decoration-color: rgba(17, 24, 39, 0.25);
+      text-decoration-thickness: 1px;
+    }
     .anchor-card.master {
       border-color: var(--green);
-      box-shadow: 0 18px 40px rgba(14, 93, 79, 0.12);
+      background: linear-gradient(180deg, #fff, #f3fbf6);
+      box-shadow: 0 22px 52px rgba(14, 93, 79, 0.16);
     }
     .anchor-label {
       align-self: flex-start;
-      padding: 4px 12px;
+      padding: 5px 12px;
       border-radius: 999px;
       background: rgba(17, 24, 39, 0.08);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
     }
     .anchor-card.master .anchor-label {
       background: var(--green);
@@ -2514,14 +2789,21 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      font-size: 16px;
-      line-height: 1.5;
+      gap: 8px;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    .anchor-card ul li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
     }
     .anchor-card ul em {
       font-style: normal;
       font-weight: 700;
       color: var(--ink);
+      white-space: nowrap;
     }
     .anchor-card.master ul em {
       color: var(--green);
@@ -2530,19 +2812,21 @@
       display: flex;
       align-items: baseline;
       justify-content: space-between;
-      padding: 12px 0 4px;
-      border-top: 1px solid rgba(17, 24, 39, 0.1);
+      padding: 14px 0 4px;
+      border-top: 1px dashed rgba(17, 24, 39, 0.18);
     }
     .anchor-total span {
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 700;
       color: var(--muted);
+      letter-spacing: 0.02em;
     }
     .anchor-total strong {
       font-family: "GmarketSans", "Pretendard Variable", sans-serif;
-      font-size: 28px;
+      font-size: 30px;
       font-weight: 700;
       color: var(--ink);
+      letter-spacing: -0.02em;
     }
     .anchor-card.master .anchor-total strong {
       color: var(--green);
@@ -2553,34 +2837,81 @@
       line-height: 1.55;
       color: var(--muted);
     }
+    .anchor-vs {
+      align-self: center;
+      margin: -6px 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--ink);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "GmarketSans", sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      box-shadow: 0 10px 22px rgba(17, 24, 39, 0.2);
+      position: relative;
+      z-index: 2;
+    }
     @media (min-width: 720px) {
       .anchor-row {
         grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+      }
+      .anchor-vs {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
       }
     }
 
     /* 17 EARLYBIRD line */
+    .earlybird-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 28px 0 8px;
+      padding: 22px 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 18px;
+    }
     .earlybird-line {
-      margin: 14px 0 0;
-      font-size: 18px;
-      line-height: 1.55;
+      margin: 0;
+      padding: 12px 0;
+      font-size: 17px;
+      line-height: 1.5;
       color: rgba(255, 255, 255, 0.92);
       font-weight: 500;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.18);
+    }
+    .earlybird-line:last-child {
+      border-bottom: 0;
     }
     .earlybird-line strong {
-      color: #fff;
-      font-weight: 700;
+      color: var(--yellow);
+      font-weight: 800;
     }
     .earlybird-line.marker-line {
-      margin-top: 18px;
-      font-size: 19px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
     }
     .earlybird-extra {
+      display: inline-block;
       margin: 22px 0 0;
-      font-size: 15px;
-      line-height: 1.55;
-      color: rgba(255, 255, 255, 0.85);
-      font-weight: 500;
+      padding: 10px 16px;
+      background: rgba(255, 216, 92, 0.18);
+      border-radius: 12px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--yellow);
+      font-weight: 700;
     }
   </style>
 </head>
@@ -2603,22 +2934,50 @@
       <span class="section-no">03 / BAECHU</span>
       <h2 class="title small">열심히 준비했는데<br />엄마가 이러네요</h2>
       <div class="baechu-bubble">
-        <p class="baechu-question">“배추를 먹어본 적도 없는데<br />이걸 꼭 가르쳐야 되나요?”</p>
+        <p class="baechu-question">배추를 먹어본 적도 없는데<br />이걸 꼭 가르쳐야 되나요?</p>
+        <span class="baechu-speaker">— 8세 자폐 아동 어머니</span>
       </div>
-      <p class="baechu-after">저는 답하지 못했습니다.<br /><span class="marker">그리고 15년 동안</span><br />그 질문이 따라다녔습니다.</p>
+      <p class="baechu-after">저는 답하지 못했습니다.<br /><span class="marker">그리고 15년 동안</span><br />그 질문이 저를 따라다녔습니다.</p>
     </section>
 
     <section class="cut paper">
       <span class="section-no">04 / SENTENCE PROBLEM</span>
       <h2 class="title small">문장도<br />다양하게 가르치고 싶은데</h2>
+      <div class="sentence-pool" aria-label="익숙한 문장만 반복되는 풀 도식">
+        <span class="sentence-chip hit">먹어요</span>
+        <span class="sentence-chip hit">줘요</span>
+        <span class="sentence-chip hit">가요</span>
+        <span class="sentence-chip hit">해요</span>
+        <span class="sentence-chip faded">누가 무엇을</span>
+        <span class="sentence-chip faded">언제 어디서</span>
+        <span class="sentence-chip faded">왜 어떻게</span>
+        <span class="sentence-chip faded">~보다 더</span>
+        <span class="sentence-chip faded">~인데 ~해요</span>
+      </div>
       <p class="sentence-problem-line">수업에서는 결국<br /><span class="marker">익숙한 문장만 반복됩니다.</span></p>
       <p class="sentence-problem-tail">그 문장들을 매번<br />선생님이 다 떠올려야 한다면요?</p>
     </section>
 
     <section class="cut dark compact transition-cut" id="product-intro">
       <span class="section-no">05 / BRIDGE</span>
-      <h2 class="title transition-title">그래서 <span class="key-block">15년</span> 동안<br />센터를 운영하면서<br /><span class="key-block">10만 명</span>이 넘는 아이들을<br />보면서 만들었습니다</h2>
-      <p class="bridge-sub">발달 검사·언어 검사·논문<br />모두 합쳐 준비했습니다.</p>
+      <h2 class="bridge-headline">그래서<br />준비했습니다</h2>
+      <div class="bridge-stat" aria-label="15년 임상과 10만 명 아이 통계">
+        <div class="bridge-stat-card">
+          <span class="num">15<small>년</small></span>
+          <span class="label">센터 운영 임상</span>
+        </div>
+        <div class="bridge-stat-card">
+          <span class="num">10<small>만 명+</small></span>
+          <span class="label">만난 아이들</span>
+        </div>
+      </div>
+      <p class="bridge-sub">발달 검사·언어 검사·문장 발달 논문을<br />모두 통합해 한 흐름으로 만들었습니다.</p>
+      <div class="bridge-sources" aria-hidden="true">
+        <span class="bridge-source-chip">표준화 검사</span>
+        <span class="bridge-source-chip">발달 자료</span>
+        <span class="bridge-source-chip">문법 자료</span>
+        <span class="bridge-source-chip">15년 현장</span>
+      </div>
     </section>
 
     <section class="cut cream tall product-reveal">
@@ -2652,15 +3011,34 @@
     <section class="cut white">
       <span class="section-no">09 / WORKSHEET DIVERSITY</span>
       <h2 class="title small">내가 고른 단어로<br /><span class="marker">200종류 이상의</span><br />학습지를 만들 수 있습니다</h2>
-      <p class="lead">머리 한 단어로 색칠하기·같은 그림 찾기·미로 탈출·선 긋기·글씨 쓰기까지.</p>
-      <div class="gif-placeholder">GIF 예정 — 머리 한 단어 다양한 활동지 흐름</div>
+      <p class="lead">단어 하나에서 활동 종류가 계속 펼쳐집니다.</p>
+      <div class="gif-placeholder rich">
+        <div class="placeholder-frame">
+          <div class="play-icon" aria-hidden="true"></div>
+          <span class="placeholder-text">GIF 예정</span>
+          <span class="placeholder-sub">"머리" 한 단어 → 다양한 활동지 펼침</span>
+        </div>
+        <div class="activity-chip-row">
+          <span class="activity-chip">색칠하기</span>
+          <span class="activity-chip">같은 그림 찾기</span>
+          <span class="activity-chip">미로 탈출</span>
+          <span class="activity-chip">선 긋기</span>
+          <span class="activity-chip">글씨 쓰기</span>
+        </div>
+      </div>
     </section>
 
     <section class="cut paper">
       <span class="section-no">10 / WORKSHEET ADD</span>
       <h2 class="title small">원하는 만큼<br /><span class="marker">추가해서 만들 수 있습니다</span></h2>
       <p class="lead">한 단어 안에서 활동지가 계속 늘어납니다.</p>
-      <div class="gif-placeholder">GIF 예정 — 활동지 추가 동작 한 컷</div>
+      <div class="gif-placeholder rich">
+        <div class="placeholder-frame">
+          <div class="play-icon" aria-hidden="true"></div>
+          <span class="placeholder-text">GIF 예정</span>
+          <span class="placeholder-sub">활동지 +1, +1로 누적되는 한 컷</span>
+        </div>
+      </div>
     </section>
 
     <section class="cut dark">
@@ -2682,17 +3060,28 @@
       <p class="lead">상담 때 보여줄 근거가 한 장으로 정리됩니다.</p>
       <div class="ba-row">
         <div class="ba-card before">
-          <span class="ba-label">Before</span>
+          <span class="ba-label">BEFORE</span>
           <strong>빈 보고서</strong>
-          <p>체크하지 못한<br />항목들이 남아 있습니다.</p>
+          <div class="ba-checks" aria-hidden="true">
+            <span class="ba-check">가족 어휘</span>
+            <span class="ba-check">신체 어휘</span>
+            <span class="ba-check">동사 표현</span>
+            <span class="ba-check">장소 표현</span>
+          </div>
+          <p>체크하지 못한 항목들이<br />그대로 남아 있습니다.</p>
         </div>
         <div class="ba-card after">
-          <span class="ba-label">After</span>
+          <span class="ba-label">AFTER</span>
           <strong>채워진 보고서</strong>
+          <div class="ba-checks" aria-hidden="true">
+            <span class="ba-check">가족 어휘</span>
+            <span class="ba-check">신체 어휘</span>
+            <span class="ba-check">동사 표현</span>
+            <span class="ba-check">장소 표현</span>
+          </div>
           <p>한 번의 출력으로<br />상담 자료가 완성됩니다.</p>
         </div>
       </div>
-      <div class="gif-placeholder">GIF 예정 — 빈 보고서 → 채워진 보고서 출력 흐름</div>
     </section>
 
     <section class="cut cream tall">
@@ -2752,11 +3141,25 @@
     <section class="cut paper">
       <span class="section-no">15 / TESTIMONIAL</span>
       <h2 class="title small">먼저 사용한 선생님들의<br /><span class="marker">후기</span></h2>
-      <p class="lead">한그루클래스 양식으로 정리한 실제 사용 후기.</p>
-      <div class="testimonial-placeholder">
-        <p class="placeholder-title">후기 자료 전달 대기 중</p>
-        <p class="placeholder-note">한그루클래스 양식 후기 카드 3~5개가 이 자리에 들어갑니다.</p>
+      <p class="lead">한그루클래스 양식으로 정리된 실제 사용 후기.</p>
+      <div class="testimonial-list" aria-label="후기 카드 자리 placeholder">
+        <article class="testimonial-card placeholder">
+          <span class="testimonial-stars" aria-hidden="true">★★★★★</span>
+          <p class="testimonial-quote">후기 ① — 단어를 고르는 시간이 줄어든 사용자 후기 자리.</p>
+          <div class="testimonial-meta"><span>○○ 치료사</span><span>경력 ○년</span></div>
+        </article>
+        <article class="testimonial-card placeholder">
+          <span class="testimonial-stars" aria-hidden="true">★★★★★</span>
+          <p class="testimonial-quote">후기 ② — 활동지 다양성·부모 상담 활용 후기 자리.</p>
+          <div class="testimonial-meta"><span>○○ 치료사</span><span>경력 ○년</span></div>
+        </article>
+        <article class="testimonial-card placeholder">
+          <span class="testimonial-stars" aria-hidden="true">★★★★★</span>
+          <p class="testimonial-quote">후기 ③ — 성장 기록·재구매 의향 후기 자리.</p>
+          <div class="testimonial-meta"><span>○○ 치료사</span><span>경력 ○년</span></div>
+        </article>
       </div>
+      <p class="testimonial-note">한그루클래스 양식 후기 카드 3~5개가 이 자리에 들어갑니다.</p>
     </section>
 
     <section class="cut white">
@@ -2777,11 +3180,12 @@
           </div>
           <p class="anchor-note">잃어버리거나 구겨지면<br />다시 구매해야 합니다.</p>
         </div>
+        <div class="anchor-vs" aria-hidden="true">VS</div>
         <div class="anchor-card master">
           <span class="anchor-label">언어치료 마스터키</span>
           <ul>
-            <li><em>1,068개</em> 어휘</li>
-            <li><em>7,677개</em> 문장</li>
+            <li>핵심 어휘 <em>1,068개</em></li>
+            <li>문장 자료 <em>7,677개</em></li>
             <li>활동지 <em>무한 생성</em></li>
           </ul>
           <div class="anchor-total">
@@ -2797,9 +3201,11 @@
       <span class="section-no">17 / EARLYBIRD</span>
       <span class="eyebrow">Earlybird</span>
       <h2 class="title small">이 프로그램은<br />세상에 없던<br /><span class="marker">처음 공개되는 프로그램</span>입니다</h2>
-      <p class="earlybird-line">1기 처음 <strong>100분</strong>께는 <strong>20% 할인</strong>합니다.</p>
-      <p class="earlybird-line">이후 가격은 다시 올라갑니다.</p>
-      <p class="earlybird-line marker-line"><span class="marker">지금이 가장 가벼운 가격입니다.</span></p>
+      <div class="earlybird-stack">
+        <p class="earlybird-line">1기 처음 <strong>100분</strong>께는 <strong>20%</strong> 할인합니다.</p>
+        <p class="earlybird-line">이후 가격은 다시 올라갑니다.</p>
+        <p class="earlybird-line marker-line">지금이 가장 가벼운 가격입니다.</p>
+      </div>
       <div class="price-card regular">
         <span class="price-label">정가</span>
         <h3>일반 판매가</h3>
