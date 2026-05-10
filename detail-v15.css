@@ -2152,11 +2152,46 @@
       letter-spacing: 0.04em;
     }
 
+    .sentence-step {
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .sentence-step-title {
+      max-width: 560px;
+    }
+
+    .sentence-placeholder {
+      min-height: 420px;
+      border-radius: 22px;
+      border: 2px dashed rgba(14, 93, 79, 0.25);
+      background:
+        radial-gradient(circle at 50% 45%, rgba(255, 216, 92, 0.22), transparent 32%),
+        linear-gradient(135deg, rgba(14, 93, 79, 0.06), rgba(238, 120, 27, 0.06)),
+        #f8fafc;
+      color: #8390a3;
+      text-align: center;
+      box-shadow: 0 22px 54px rgba(17, 24, 39, 0.08);
+    }
+
+    .sentence-output .sentence-placeholder {
+      background:
+        radial-gradient(circle at 50% 45%, rgba(255, 216, 92, 0.28), transparent 32%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(255, 249, 239, 0.76)),
+        #fff;
+      border-color: rgba(238, 120, 27, 0.24);
+    }
+
     @media (max-width: 520px) {
       .gif-placeholder {
         min-height: 300px;
         font-size: 18px;
         margin-top: 36px;
+      }
+
+      .sentence-placeholder {
+        min-height: 320px;
+        border-radius: 18px;
       }
     }
 
@@ -3393,11 +3428,6 @@
       background: #f3f1ec;
       color: #5b6473;
     }
-    .anchor-card.legacy ul li {
-      text-decoration: line-through;
-      text-decoration-color: rgba(17, 24, 39, 0.25);
-      text-decoration-thickness: 1px;
-    }
     .anchor-card.master {
       border-color: var(--green);
       background: linear-gradient(180deg, #fff, #f3fbf6);
@@ -3468,7 +3498,9 @@
       margin: 0;
       font-size: 13px;
       line-height: 1.55;
-      color: var(--muted);
+      color: var(--ink);
+      text-align: center;
+      font-weight: 700;
     }
     .anchor-vs {
       align-self: center;
@@ -3503,46 +3535,163 @@
       }
     }
 
-    /* 17 EARLYBIRD line */
-    .earlybird-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      margin: 28px 0 8px;
-      padding: 22px 20px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 18px;
+    /* 18 EARLYBIRD offer */
+    .earlybird-offer {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(180deg, #ffffff 0%, #f5f6f8 100%);
     }
-    .earlybird-line {
-      margin: 0;
-      padding: 12px 0;
-      font-size: 17px;
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.92);
-      font-weight: 500;
-      border-bottom: 1px dashed rgba(255, 255, 255, 0.18);
+    .offer-poster {
+      width: 100%;
     }
-    .earlybird-line:last-child {
-      border-bottom: 0;
+    .offer-overline {
+      color: #d7dbe2;
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 900;
     }
-    .earlybird-line strong {
-      color: var(--yellow);
+    .earlybird-poster-title {
+      margin-top: 10px;
+      color: #101820;
+      font-size: clamp(46px, 9vw, 70px);
+      line-height: 1.05;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+    .earlybird-poster-title span {
+      color: #0e5d4f;
+    }
+    .reward-card {
+      width: 100%;
+      margin-top: 42px;
+      padding: 38px 30px 30px;
+      border-radius: 32px;
+      background: #f0f1f3;
+      box-shadow: 0 28px 70px rgba(17, 24, 39, 0.12);
+      color: #111827;
+    }
+    .reward-badge {
+      display: inline-flex;
+      padding: 10px 22px;
+      border-radius: 999px;
+      background: #0e5d4f;
+      color: #fff;
+      font-size: 18px;
+      line-height: 1;
+      font-weight: 950;
+    }
+    .reward-card h3 {
+      margin-top: 28px;
+      font-size: clamp(34px, 7vw, 52px);
+      line-height: 1.18;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+    .reward-sub {
+      margin-top: 18px;
+      color: #555b66;
+      font-size: 19px;
+      line-height: 1.55;
       font-weight: 800;
     }
-    .earlybird-line.marker-line {
-      font-size: 18px;
-      font-weight: 700;
-      color: #fff;
+    .reward-features {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 28px;
     }
-    .earlybird-extra {
-      display: inline-block;
-      margin: 22px 0 0;
-      padding: 10px 16px;
-      background: rgba(255, 216, 92, 0.18);
-      border-radius: 12px;
+    .reward-features span {
+      min-height: 78px;
+      padding: 14px 10px;
+      border-radius: 18px;
+      background: #fff;
+      color: #555b66;
       font-size: 14px;
-      line-height: 1.5;
-      color: var(--yellow);
+      line-height: 1.42;
+      font-weight: 800;
+      box-shadow: inset 0 0 0 1px rgba(17, 24, 39, 0.07);
+    }
+    .reward-features strong {
+      display: inline-block;
+      margin-top: 4px;
+      color: #111827;
+      font-size: 18px;
+      font-weight: 950;
+    }
+    .reward-price {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 18px;
+      margin-top: 34px;
+    }
+    .reward-price-main {
+      text-align: center;
+    }
+    .reward-price-main del {
+      display: block;
+      color: #838996;
+      font-size: 23px;
+      line-height: 1;
+      font-weight: 850;
+      text-decoration-thickness: 2px;
+    }
+    .reward-price-main strong {
+      display: block;
+      margin-top: 12px;
+      color: #000;
+      font-family: "GmarketSans", "Pretendard Variable", sans-serif;
+      font-size: clamp(45px, 9vw, 64px);
+      line-height: 1;
       font-weight: 700;
+      letter-spacing: 0;
+    }
+    .reward-discount {
+      min-width: 118px;
+      padding: 18px 14px;
+      border-radius: 20px;
+      background: #0e5d4f;
+      color: #fff;
+      font-family: "GmarketSans", "Pretendard Variable", sans-serif;
+      font-size: 36px;
+      line-height: 0.95;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+    .reward-discount span {
+      font-family: "Pretendard Variable", Pretendard, sans-serif;
+      font-size: 15px;
+      font-weight: 950;
+    }
+
+    @media (max-width: 520px) {
+      .offer-overline {
+        font-size: 19px;
+      }
+      .reward-card {
+        margin-top: 34px;
+        padding: 32px 18px 24px;
+        border-radius: 26px;
+      }
+      .reward-badge {
+        font-size: 15px;
+      }
+      .reward-card h3 {
+        margin-top: 24px;
+      }
+      .reward-sub {
+        font-size: 16px;
+      }
+      .reward-price {
+        gap: 12px;
+      }
+      .reward-price-main strong {
+        font-size: 44px;
+      }
+      .reward-discount {
+        min-width: 94px;
+        padding: 15px 10px;
+        font-size: 30px;
+      }
     }
