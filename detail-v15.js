@@ -14,9 +14,16 @@
     window.addEventListener("scroll", toggleSticky, { passive: true });
 
     document.querySelectorAll(".js-speed-video").forEach((video) => {
-      video.playbackRate = 1.3;
+      video.playbackRate = 1.5;
       video.addEventListener("loadedmetadata", () => {
-        video.playbackRate = 1.3;
+        video.playbackRate = 1.5;
+      });
+    });
+
+    document.querySelectorAll(".js-workbook-video").forEach((video) => {
+      video.playbackRate = 1.5;
+      video.addEventListener("loadedmetadata", () => {
+        video.playbackRate = 1.5;
       });
     });
 

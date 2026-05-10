@@ -36,7 +36,7 @@
       </div>
     </section>
 
-    <section class="cut cream tall baechu-cut">
+    <section class="cut cream tall baechu-cut js-motion-section">
       <span class="section-no">03 / BAECHU</span>
       <h2 class="title small baechu-title">그날<br />한 어머니가 물었습니다</h2>
       <div class="baechu-scene">
@@ -46,7 +46,7 @@
           alt="어머니가 배추를 지금 꼭 가르쳐야 하는지 질문하는 종이 질감 일러스트"
         />
       </div>
-      <p class="baechu-after">저는 바로 답하지 못했습니다.<br />그 질문은 <span class="marker">15년 동안</span><br />제 안에 남았습니다.</p>
+      <p class="baechu-after">저는 바로 답하지 못했습니다.<br />그 질문은 <span class="marker marker-sweep">15년 동안</span><br />제 안에 남았습니다.</p>
     </section>
 
     <section class="cut paper js-motion-section">
@@ -131,13 +131,9 @@
     <section class="cut paper worksheet-demo">
       <span class="section-no">10 / WORKSHEET ADD</span>
       <h2 class="title small worksheet-demo-title">내가 클릭하는 단어로<br /><span class="marker">무제한으로 만드는</span><br />활동지</h2>
-      <div class="gif-placeholder rich worksheet-video-placeholder" aria-label="활동지 생성 영상 예정 영역">
-        <div class="placeholder-frame">
-          <div class="play-icon" aria-hidden="true"></div>
-          <span class="placeholder-text">GIF / 영상 예정</span>
-          <span class="placeholder-sub">단어 클릭 화면이 들어갈 자리</span>
-        </div>
-      </div>
+      <video class="product-video worksheet-demo-video js-workbook-video" muted loop playsinline preload="metadata" aria-label="클릭한 단어로 활동지를 만드는 실제 프로그램 화면">
+        <source src="image/workbook.mp4" type="video/mp4" />
+      </video>
     </section>
 
     <section class="cut dark">
@@ -242,31 +238,60 @@
       </div>
     </section>
 
-    <section class="cut paper">
+    <section class="cut testimonial-proof js-motion-section">
       <span class="section-no">16 / TESTIMONIAL</span>
-      <h2 class="title small">먼저 사용한 선생님들의<br /><span class="marker">후기</span></h2>
-      <p class="lead">한그루클래스 양식으로 정리된 실제 사용 후기.</p>
-      <div class="testimonial-list" aria-label="후기 카드 자리 placeholder">
-        <article class="testimonial-card placeholder">
-          <span class="testimonial-stars" aria-hidden="true">★★★★★</span>
-          <p class="testimonial-quote">후기 ① — 단어를 고르는 시간이 줄어든 사용자 후기 자리.</p>
-          <div class="testimonial-meta"><span>○○ 치료사</span><span>경력 ○년</span></div>
-        </article>
-        <article class="testimonial-card placeholder">
-          <span class="testimonial-stars" aria-hidden="true">★★★★★</span>
-          <p class="testimonial-quote">후기 ② — 활동지 다양성·부모 상담 활용 후기 자리.</p>
-          <div class="testimonial-meta"><span>○○ 치료사</span><span>경력 ○년</span></div>
-        </article>
-        <article class="testimonial-card placeholder">
-          <span class="testimonial-stars" aria-hidden="true">★★★★★</span>
-          <p class="testimonial-quote">후기 ③ — 성장 기록·재구매 의향 후기 자리.</p>
-          <div class="testimonial-meta"><span>○○ 치료사</span><span>경력 ○년</span></div>
-        </article>
+      <div class="testimonial-proof-copy">
+        <h2 class="title small testimonial-proof-title">먼저 써본 선생님들이<br />먼저 알아봤습니다</h2>
       </div>
-      <p class="testimonial-note">한그루클래스 양식 후기 카드 3~5개가 이 자리에 들어갑니다.</p>
+      <div class="testimonial-card-stack" aria-label="테스터 선생님 후기">
+        <blockquote class="testimonial-review-card">
+          <div class="review-card-head">
+            <span class="review-avatar">이</span>
+            <div>
+              <span class="review-stars">★★★★★</span>
+              <cite>언어치료사 13년차 이○○</cite>
+            </div>
+          </div>
+          <strong>세상에 없던 프로그램이 나왔어요.</strong>
+          <p>정말 언어치료사만을 위한 프로그램이에요. <mark>임상 경험이 고스란히 녹아 있어서</mark> 그림카드나 학습지 사이트와는 비교가 안 됐습니다.</p>
+        </blockquote>
+        <blockquote class="testimonial-review-card">
+          <div class="review-card-head">
+            <span class="review-avatar">박</span>
+            <div>
+              <span class="review-stars">★★★★★</span>
+              <cite>언어치료사 5년차 박○○</cite>
+            </div>
+          </div>
+          <strong>문장을 이렇게 편하게 가르칠 수 있다니…</strong>
+          <p>문장 수업을 준비할 때마다 막히던 부분이 있었는데, <mark>원하는 문장을 고르고 바로 자료로 이어지는 흐름</mark>이 정말 편했습니다.</p>
+        </blockquote>
+        <blockquote class="testimonial-review-card">
+          <div class="review-card-head">
+            <span class="review-avatar">김</span>
+            <div>
+              <span class="review-stars">★★★★★</span>
+              <cite>센터 운영 치료사 김○○</cite>
+            </div>
+          </div>
+          <strong>치료사가 겪는 문제를 고민해서 만든 것 같아요.</strong>
+          <p>어휘를 고르고 활동지를 만드는 과정이 실제 수업 준비 흐름과 맞아요. <mark>현장에서 필요한 순서대로 정리된 느낌</mark>이 들었습니다.</p>
+        </blockquote>
+        <blockquote class="testimonial-review-card">
+          <div class="review-card-head">
+            <span class="review-avatar">최</span>
+            <div>
+              <span class="review-stars">★★★★★</span>
+              <cite>언어치료사 9년차 최○○</cite>
+            </div>
+          </div>
+          <strong>카드를 잃어버릴 걱정도, 아이가 구길 걱정도 없어요.</strong>
+          <p>필요할 때마다 다시 만들고 출력할 수 있으니까, <mark>자료를 사서 쌓아두던 부담</mark>이 훨씬 줄어들 것 같아요.</p>
+        </blockquote>
+      </div>
     </section>
 
-    <section class="cut white">
+    <section class="cut price-anchor-section">
       <span class="section-no">17 / PRICE ANCHOR</span>
       <h2 class="title small">자료 구매,<br /><span class="marker">끝이 있었나요?</span></h2>
       <p class="lead">또 사고, 또 찾던 자료를<br />마스터키 하나로 계속 만들어 쓰세요.</p>
