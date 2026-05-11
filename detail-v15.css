@@ -1448,8 +1448,9 @@
     .cta-note {
       margin-top: 16px;
       color: rgba(255, 255, 255, 0.62);
-      font-size: 14px;
+      font-size: 17px;
       font-weight: 800;
+      line-height: 1.35;
       text-align: center;
     }
 
@@ -1898,6 +1899,22 @@
       margin-top: 34px;
     }
 
+    .material-image-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 420px;
+      border: 2px dashed rgba(17, 24, 39, 0.22);
+      border-radius: 8px;
+      background: #f6f7f9;
+      color: rgba(17, 24, 39, 0.62);
+      font-size: clamp(24px, 5vw, 34px);
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
     .material-loop-lead {
       margin: 26px 0 0;
       color: #344054;
@@ -1956,6 +1973,12 @@
 
       .material-loop .problem-photo-wrap {
         margin-top: 30px;
+      }
+
+      .material-image-placeholder {
+        min-height: 300px;
+        border-radius: 6px;
+        font-size: 24px;
       }
 
       .material-loop-lead {
@@ -2445,16 +2468,17 @@
     .product-name-title {
       max-width: 520px;
       color: var(--ink);
-      font-size: clamp(58px, 14vw, 88px);
-      line-height: 1.22;
+      font-size: clamp(70px, 16vw, 112px);
+      line-height: 1.12;
       font-weight: 950;
       letter-spacing: -0.02em;
     }
 
-    .product-reveal-static {
+.product-reveal-static {
       min-height: 780px;
       align-items: center;
       justify-content: center;
+      padding-top: 22px;
       text-align: center;
       background:
         radial-gradient(circle at 50% 48%, rgba(255, 216, 92, 0.22), transparent 44%),
@@ -2462,13 +2486,21 @@
     }
 
     .product-reveal-static .reveal-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       align-self: center;
-      margin-bottom: 22px;
+      margin-bottom: 26px;
+      min-height: 42px;
+      padding: 0 20px;
+      font-size: 25px;
+      line-height: 1;
+      font-weight: 900;
     }
 
     .product-reveal-static .product-name-title {
       max-width: none;
-      margin: 0 auto 34px;
+      margin: 0 auto 48px;
     }
 
     .product-reveal .reveal-lead {
@@ -2478,16 +2510,22 @@
     }
 
     .product-reveal .product-promise {
-      font-family: "ChosunKg", "GmarketSans", "Pretendard Variable", sans-serif;
-      font-size: clamp(28px, 5.65vw, 38px);
-      line-height: 1.46;
+      font-family: "Pretendard Variable", "Pretendard", sans-serif;
+      font-size: clamp(24px, 4.8vw, 32px);
+      line-height: 1.5;
       color: var(--ink);
-      font-weight: 700;
+      font-weight: 800;
+    }
+
+    .product-reveal-static .reveal-label,
+    .product-reveal-static .product-name-title,
+    .product-reveal-static .product-promise {
+      transform: translateY(34px);
     }
 
     .product-reveal .product-promise .marker {
-      padding-right: 0.1em;
-      padding-left: 0.1em;
+      padding-right: 0.08em;
+      padding-left: 0.08em;
     }
 
     .product-ready-list {
@@ -2543,14 +2581,27 @@
 
       .product-reveal-static {
         min-height: 840px;
+        padding-top: 28px;
       }
 
       .product-reveal-static .product-name-title {
-        margin-bottom: 30px;
+        margin-bottom: 42px;
+      }
+
+      .product-reveal-static .reveal-label {
+        min-height: 38px;
+        padding: 0 18px;
+        font-size: 20px;
       }
 
       .product-reveal .product-promise {
-        font-size: clamp(24px, 6.25vw, 27px);
+        font-size: clamp(22px, 5.8vw, 25px);
+      }
+
+      .product-reveal-static .reveal-label,
+      .product-reveal-static .product-name-title,
+      .product-reveal-static .product-promise {
+        transform: translateY(26px);
       }
 
       .product-ready-list {
@@ -3990,7 +4041,7 @@
       animation: dailySweepReveal 0.72s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
     }
     .motion-in .daily-value-copy {
-      animation: dailyFadeIn 0.58s ease-out 0.76s both;
+      animation: dailyFadeIn 0.58s ease-out 0.48s both;
     }
     @keyframes dailySweepReveal {
       0% {
