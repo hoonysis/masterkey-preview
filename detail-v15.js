@@ -1,13 +1,11 @@
     const sticky = document.querySelector(".sticky");
     const productIntro = document.querySelector("#product-intro");
-    const earlybird = document.querySelector("#earlybird");
 
     const toggleSticky = () => {
-      if (!sticky || !productIntro || !earlybird) return;
+      if (!sticky || !productIntro) return;
       const y = window.scrollY;
       const showAfter = productIntro.offsetTop - 80;
-      const hideAfter = earlybird.offsetTop - 160;
-      sticky.classList.toggle("visible", y > showAfter && y < hideAfter);
+      sticky.classList.toggle("visible", y > showAfter);
     };
 
     toggleSticky();
