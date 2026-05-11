@@ -1,11 +1,13 @@
     const sticky = document.querySelector(".sticky");
     const productIntro = document.querySelector("#product-intro");
+    const finalSection = document.querySelector("#final");
 
     const toggleSticky = () => {
       if (!sticky || !productIntro) return;
       const y = window.scrollY;
       const showAfter = productIntro.offsetTop - 80;
-      sticky.classList.toggle("visible", y > showAfter);
+      const finalTop = finalSection ? finalSection.offsetTop - window.innerHeight * 0.8 : Infinity;
+      sticky.classList.toggle("visible", y > showAfter && y < finalTop);
     };
 
     toggleSticky();
