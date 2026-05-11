@@ -4013,10 +4013,11 @@
       color: #0e5d4f;
       font-family: "GmarketSans", "Pretendard Variable", sans-serif;
       font-size: clamp(76px, 16vw, 124px);
-      line-height: 1;
+      line-height: 1.08;
       font-weight: 700;
       letter-spacing: 0;
       white-space: nowrap;
+      padding-top: 0.03em;
       opacity: 0;
       clip-path: inset(0 100% 0 0);
     }
