@@ -5,7 +5,7 @@
     const toggleSticky = () => {
       if (!sticky || !productIntro || !earlybird) return;
       const y = window.scrollY;
-      const showAfter = productIntro.offsetTop + productIntro.offsetHeight * 0.45;
+      const showAfter = productIntro.offsetTop - 80;
       const hideAfter = earlybird.offsetTop - 160;
       sticky.classList.toggle("visible", y > showAfter && y < hideAfter);
     };
@@ -17,6 +17,13 @@
       video.playbackRate = 1.5;
       video.addEventListener("loadedmetadata", () => {
         video.playbackRate = 1.5;
+      });
+    });
+
+    document.querySelectorAll(".js-double-speed-video").forEach((video) => {
+      video.playbackRate = 2;
+      video.addEventListener("loadedmetadata", () => {
+        video.playbackRate = 2;
       });
     });
 

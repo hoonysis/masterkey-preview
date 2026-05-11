@@ -207,7 +207,7 @@
     }
 
     .motion-in .marker-sweep {
-      animation: markerSweep 1.15s cubic-bezier(0.22, 0.82, 0.22, 1) 0.2s forwards;
+      animation: markerSweep 0.78s cubic-bezier(0.22, 0.82, 0.22, 1) 0.1s forwards;
     }
 
     @keyframes markerSweep {
@@ -1890,6 +1890,33 @@
       margin: 0;
     }
 
+    .material-loop {
+      justify-content: center;
+    }
+
+    .material-loop .problem-photo-wrap {
+      margin-top: 34px;
+    }
+
+    .material-loop-lead {
+      margin: 26px 0 0;
+      color: #344054;
+      font-size: clamp(21px, 3.8vw, 27px);
+      line-height: 1.62;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .material-loop-tail {
+      margin: 34px auto 0;
+      color: var(--ink);
+      font-family: "RIDIBatang", "Batang", "Noto Serif KR", serif;
+      font-size: clamp(25px, 4.6vw, 34px);
+      line-height: 1.52;
+      font-weight: 400;
+      text-align: center;
+    }
+
     .problem-question-card {
       position: absolute;
       left: 50%;
@@ -1911,7 +1938,7 @@
     }
 
     .motion-in .problem-question-card {
-      animation: questionCardFade 0.9s ease 1.2s forwards;
+      animation: questionCardFade 0.68s ease 0.65s forwards;
     }
 
     @keyframes questionCardFade {
@@ -1925,6 +1952,20 @@
       .problem-photo-wrap {
         width: calc(100% + 44px);
         margin: 42px -22px 0;
+      }
+
+      .material-loop .problem-photo-wrap {
+        margin-top: 30px;
+      }
+
+      .material-loop-lead {
+        margin-top: 22px;
+        font-size: 19px;
+      }
+
+      .material-loop-tail {
+        margin-top: 30px;
+        font-size: 24px;
       }
 
       .problem-question-card {
@@ -1993,7 +2034,7 @@
     }
 
     .motion-in .night-lead-line {
-      animation: nightLeadLine 0.75s cubic-bezier(0.18, 0.78, 0.18, 1) 0.25s forwards;
+      animation: nightLeadLine 0.58s cubic-bezier(0.18, 0.78, 0.18, 1) 0.12s forwards;
     }
 
     .night-lead-line + .night-lead-line {
@@ -2001,7 +2042,7 @@
     }
 
     .motion-in .night-lead-line:nth-of-type(2) {
-      animation-delay: 1.05s;
+      animation-delay: 0.52s;
     }
 
     @keyframes nightLeadLine {
@@ -2088,13 +2129,18 @@
       .motion-in .marker-sweep,
       .motion-in .problem-question-card,
       .motion-in .sentence-visual-wrap,
-      .motion-in .sentence-problem-tail {
+      .motion-in .sentence-problem-tail,
+      .motion-in .daily-price,
+      .motion-in .daily-value-copy {
         animation: none;
       }
 
       .sentence-visual-wrap,
-      .sentence-problem-tail {
+      .sentence-problem-tail,
+      .daily-price,
+      .daily-value-copy {
         opacity: 1;
+        clip-path: none;
         transform: none;
       }
 
@@ -2283,6 +2329,10 @@
 
     .feature-video {
       margin-top: 50px;
+    }
+
+    .sentence-step-video + .sentence-step-video {
+      margin-top: 34px;
     }
 
     .sentence-infographic {
@@ -2768,10 +2818,6 @@
       animation: baechuAfterFade 0.72s ease 0.72s forwards;
     }
 
-    .motion-in .baechu-after .marker-sweep {
-      animation-delay: 1.5s;
-    }
-
     @keyframes baechuAfterFade {
       to {
         opacity: 1;
@@ -2812,7 +2858,7 @@
     }
 
     .motion-in .sentence-visual-wrap {
-      animation: sentenceVisualIn 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) 0.95s forwards;
+      animation: sentenceVisualIn 0.68s cubic-bezier(0.2, 0.8, 0.2, 1) 0.52s forwards;
     }
 
     .sentence-visual {
@@ -2824,7 +2870,7 @@
     }
 
     .motion-in .sentence-title .marker-sweep {
-      animation-delay: 0.25s;
+      animation-delay: 0.12s;
     }
 
     .sentence-problem-tail {
@@ -2846,7 +2892,7 @@
     }
 
     .motion-in .sentence-problem-tail {
-      animation: sentenceTailIn 0.7s ease 1.85s forwards;
+      animation: sentenceTailIn 0.68s cubic-bezier(0.2, 0.8, 0.2, 1) 0.52s forwards;
     }
 
     @keyframes sentenceVisualIn {
@@ -3284,6 +3330,10 @@
       box-shadow: 0 22px 58px rgba(17, 24, 39, 0.14);
     }
 
+    .worksheet-demo-video + .worksheet-demo-video {
+      margin-top: 34px;
+    }
+
     /* 13 RECORD BEFORE/AFTER */
     .ba-row {
       position: relative;
@@ -3412,7 +3462,7 @@
       left: 0;
       background:
         linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(14, 93, 79, 0.22)),
-        url("image/Snipaste_2026-05-10_21-51-25.png") left top / cover no-repeat;
+        url("image/testimonial-background.png") left top / cover no-repeat;
       opacity: 0.54;
       filter: blur(0.8px) saturate(0.88);
       transform: scale(1.01);
@@ -3650,14 +3700,21 @@
     }
     .anchor-note {
       margin: 0;
-      font-size: 13px;
-      line-height: 1.55;
+      font-family: "Pretendard Variable", Pretendard, sans-serif;
+      font-size: 17px;
+      line-height: 1.58;
       color: var(--ink);
       text-align: center;
-      font-weight: 700;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+    .anchor-note-highlight span {
+      padding: 0 0.06em 0.03em;
+      background: linear-gradient(180deg, transparent 56%, rgba(255, 216, 92, 0.82) 0);
     }
     .anchor-vs {
       align-self: center;
+      justify-self: center;
       margin: -6px 0;
       width: 44px;
       height: 44px;
@@ -3727,11 +3784,13 @@
     }
     .reward-badge {
       display: inline-flex;
-      padding: 10px 22px;
+      min-width: 214px;
+      justify-content: center;
+      padding: 13px 30px;
       border-radius: 999px;
       background: #0e5d4f;
       color: #fff;
-      font-size: 18px;
+      font-size: 20px;
       line-height: 1;
       font-weight: 950;
     }
@@ -3741,6 +3800,12 @@
       line-height: 1.18;
       font-weight: 950;
       letter-spacing: 0;
+    }
+    .reward-title-mark {
+      padding: 0 0.04em 0.02em;
+      background: linear-gradient(180deg, transparent 58%, rgba(255, 216, 92, 0.78) 0);
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
     }
     .reward-sub {
       margin-top: 18px;
@@ -3837,7 +3902,9 @@
         border-radius: 26px;
       }
       .reward-badge {
-        font-size: 15px;
+        min-width: 176px;
+        padding: 12px 24px;
+        font-size: 17px;
       }
       .reward-card h3 {
         margin-top: 24px;
@@ -3856,5 +3923,102 @@
         height: 88px;
         padding: 0 9px;
         font-size: 29px;
+      }
+    }
+
+    /* 19 DAILY VALUE */
+    .daily-value-section {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #eff8f3;
+      overflow: hidden;
+    }
+    .daily-value-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 14%, rgba(14, 93, 79, 0.08), transparent 34%),
+        radial-gradient(circle at 82% 78%, rgba(255, 216, 92, 0.14), transparent 32%);
+      pointer-events: none;
+    }
+    .daily-simple {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+    .daily-kicker {
+      margin: 0;
+      color: #273142;
+      font-size: clamp(24px, 5vw, 34px);
+      line-height: 1.2;
+      font-weight: 650;
+      letter-spacing: 0;
+    }
+    .daily-price {
+      display: block;
+      margin-top: 18px;
+      color: #0e5d4f;
+      font-family: "GmarketSans", "Pretendard Variable", sans-serif;
+      font-size: clamp(76px, 16vw, 124px);
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: 0;
+      white-space: nowrap;
+      opacity: 0;
+      clip-path: inset(0 100% 0 0);
+    }
+    .daily-rule {
+      display: block;
+      width: 86px;
+      height: 1px;
+      margin: 30px auto 26px;
+      background: rgba(17, 24, 39, 0.26);
+    }
+    .daily-value-copy {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(24px, 5vw, 33px);
+      line-height: 1.62;
+      font-weight: 560;
+      letter-spacing: 0;
+      opacity: 0;
+      clip-path: inset(0 100% 0 0);
+    }
+    .motion-in .daily-price {
+      animation: dailySweepReveal 0.72s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
+    }
+    .motion-in .daily-value-copy {
+      animation: dailyFadeIn 0.58s ease-out 0.76s both;
+    }
+    @keyframes dailySweepReveal {
+      0% {
+        opacity: 1;
+        clip-path: inset(0 100% 0 0);
+      }
+      100% {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+      }
+    }
+    @keyframes dailyFadeIn {
+      0% {
+        opacity: 0;
+        clip-path: inset(0 0 0 0);
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+        transform: translateY(0);
+      }
+    }
+    @media (max-width: 520px) {
+      .daily-price {
+        font-size: clamp(66px, 18vw, 94px);
+      }
+      .daily-rule {
+        margin: 24px auto 22px;
       }
     }
