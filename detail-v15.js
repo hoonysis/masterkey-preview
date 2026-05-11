@@ -40,8 +40,9 @@
         (entries) => {
           entries.forEach((entry) => {
             const v = entry.target;
+            const startsAtOneSecond = !!v.closest(".sentence-select");
             if (entry.isIntersecting) {
-              try { v.currentTime = 0; } catch (_) {}
+              try { v.currentTime = startsAtOneSecond ? 1 : 0; } catch (_) {}
               v.play().catch(() => {});
             } else {
               v.pause();
