@@ -1836,6 +1836,7 @@
 
 
     .section-no {
+      display: none;
       position: absolute;
       top: 22px;
       right: 22px;
@@ -4886,5 +4887,188 @@
       }
       .proof-journey-item-right {
         padding-left: 14px;
+      }
+    }
+
+    .price-notice-section {
+      background: #F7F5EF;
+      padding: 56px 20px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    .price-notice-section .section-no {
+      color: rgba(26, 26, 26, 0.45);
+    }
+    .price-notice-badge {
+      display: inline-block;
+      background: rgba(255, 90, 40, 0.1);
+      color: #C73E0F;
+      font-size: clamp(13px, 1.8vw, 15px);
+      font-weight: 500;
+      padding: 8px 20px;
+      border-radius: 999px;
+      letter-spacing: 0.01em;
+    }
+    .price-notice-headline {
+      margin: 0;
+      max-width: 720px;
+      font-size: clamp(32px, 5.6vw, 44px);
+      font-weight: 700;
+      color: #1a1a1a;
+      text-align: center;
+      line-height: 1.36;
+      letter-spacing: -0.005em;
+    }
+    .price-notice-regular {
+      width: 100%;
+      max-width: 720px;
+      background: #1a1a1a;
+      color: #ffffff;
+      border-radius: 18px;
+      padding: 40px 28px 36px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .price-notice-overline {
+      margin: 0 0 16px;
+      font-size: clamp(13px, 1.8vw, 15px);
+      letter-spacing: 0.2em;
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: 500;
+    }
+    .price-notice-strike {
+      margin: 0 0 12px;
+      font-size: clamp(15px, 2vw, 17px);
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: line-through;
+    }
+    .price-notice-amount {
+      margin: 0 0 16px;
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 8px;
+    }
+    .price-notice-num {
+      font-family: "GmarketSans", "Pretendard Variable", sans-serif;
+      font-size: clamp(56px, 8vw, 80px);
+      font-weight: 600;
+      color: #F5B82E;
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+    .price-notice-unit {
+      font-size: clamp(20px, 2.4vw, 26px);
+      color: rgba(255, 255, 255, 0.8);
+    }
+    .price-notice-regular-foot {
+      margin: 0;
+      font-size: clamp(14px, 2vw, 17px);
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.6;
+    }
+    .price-notice-breakdown {
+      width: 100%;
+      max-width: 720px;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 36px 28px;
+      box-sizing: border-box;
+    }
+    .price-notice-breakdown-head {
+      margin: 0 0 28px;
+      font-size: clamp(18px, 2.6vw, 22px);
+      font-weight: 500;
+      color: #1a1a1a;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .price-notice-items {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+    .price-notice-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .price-notice-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(15, 110, 86, 0.08);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #0F6E56;
+    }
+    .price-notice-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+    .price-notice-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: clamp(15px, 2vw, 17px);
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+    .price-notice-item p {
+      margin: 0;
+      font-size: clamp(13px, 1.8vw, 15px);
+      color: #666;
+      line-height: 1.55;
+    }
+    .price-notice-current {
+      margin: 0;
+      width: 100%;
+      max-width: 720px;
+      background: rgba(245, 184, 46, 0.15);
+      border: 1px solid rgba(245, 184, 46, 0.4);
+      border-radius: 14px;
+      padding: 30px 28px;
+      text-align: center;
+      font-size: clamp(18px, 2.8vw, 22px);
+      color: #1a1a1a;
+      line-height: 1.7;
+      box-sizing: border-box;
+    }
+    .price-notice-current strong {
+      color: #0F6E56;
+      font-weight: 600;
+      font-size: clamp(22px, 3.4vw, 28px);
+    }
+    .price-notice-current span {
+      display: block;
+      margin-top: 8px;
+      font-size: clamp(14px, 2vw, 16px);
+      color: #666;
+    }
+    @media (max-width: 520px) {
+      .price-notice-section {
+        padding: 44px 14px 48px;
+        gap: 20px;
+      }
+      .price-notice-regular {
+        padding: 32px 20px 28px;
+      }
+      .price-notice-breakdown {
+        padding: 28px 20px;
+      }
+      .price-notice-items {
+        gap: 18px;
+      }
+      .price-notice-item {
+        gap: 14px;
+      }
+      .price-notice-current {
+        padding: 24px 20px;
       }
     }
