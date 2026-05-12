@@ -1915,6 +1915,23 @@
       letter-spacing: 0;
     }
 
+    .material-image-stack {
+      display: flex;
+      gap: 8px;
+      width: 100%;
+      height: 420px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .material-image {
+      flex: 1;
+      width: 50%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.55;
+    }
+
     .material-loop-lead {
       margin: 26px 0 0;
       color: #344054;
@@ -1945,8 +1962,8 @@
       background: rgba(17, 24, 39, 0.68);
       box-shadow: 0 18px 40px rgba(17, 24, 39, 0.26);
       font-family: "RIDIBatang", "Batang", "Noto Serif KR", serif;
-      font-size: clamp(23px, 4.5vw, 32px);
-      line-height: 1.48;
+      font-size: clamp(20px, 3.8vw, 28px);
+      line-height: 1.5;
       font-weight: 400;
       text-align: center;
       text-shadow: 0 3px 14px rgba(0, 0, 0, 0.55);
@@ -1981,6 +1998,12 @@
         font-size: 24px;
       }
 
+      .material-image-stack {
+        height: 280px;
+        gap: 6px;
+        border-radius: 6px;
+      }
+
       .material-loop-lead {
         margin-top: 22px;
         font-size: 19px;
@@ -1995,7 +2018,7 @@
         width: 64%;
         padding: 17px 18px 19px;
         border-radius: 8px;
-        font-size: 24px;
+        font-size: 21px;
       }
     }
 
@@ -2728,12 +2751,12 @@
 
     .evidence-results-label {
       display: inline-flex;
-      margin-bottom: 18px;
-      padding: 7px 12px;
+      margin-bottom: 22px;
+      padding: 11px 20px;
       border-radius: 999px;
       background: rgba(238, 120, 27, 0.14);
       color: var(--orange);
-      font-size: 12px;
+      font-size: clamp(15px, 2.2vw, 17px);
       font-weight: 950;
       letter-spacing: 0.05em;
     }
@@ -4072,5 +4095,795 @@
       }
       .daily-rule {
         margin: 24px auto 22px;
+      }
+    }
+
+    /* ========================================
+       07 PROOF PEOPLE
+       ======================================== */
+    .proof-people-section {
+      background: #ffffff;
+      padding: 84px 32px 64px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 36px;
+    }
+    .proof-people-copy { text-align: center; }
+    .proof-people-title {
+      margin: 0;
+      font-size: clamp(28px, 4.6vw, 38px);
+      font-weight: 900;
+      color: var(--ink);
+      letter-spacing: -0.005em;
+      line-height: 1.3;
+    }
+    .proof-people-sub {
+      margin: 18px 0 0;
+      font-size: clamp(17px, 2.8vw, 21px);
+      font-weight: 700;
+      color: #475467;
+      line-height: 1.55;
+    }
+    .instructor-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      width: 100%;
+      max-width: 880px;
+    }
+    .instructor-card {
+      background: #fafbff;
+      border: 1px solid #e6e8ef;
+      border-radius: 14px;
+      padding: 28px 24px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .instructor-card .photo-slot {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: #e6e8ef;
+      margin: 0 auto 8px;
+    }
+    .instructor-card .role {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: #6b7280;
+      text-align: center;
+      letter-spacing: 0.01em;
+    }
+    .instructor-card h3 {
+      margin: 0;
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--ink);
+      text-align: center;
+      letter-spacing: -0.01em;
+    }
+    .instructor-card .instructor-tag {
+      margin: 4px auto 6px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 800;
+      color: #b45309;
+      background: #fef3c7;
+      border-radius: 999px;
+      padding: 5px 12px;
+      align-self: center;
+    }
+    .instructor-card .label {
+      margin-top: 14px;
+      font-size: 11px;
+      font-weight: 800;
+      color: #6b7280;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .instructor-card ul {
+      margin: 6px 0 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .instructor-card ul li {
+      position: relative;
+      padding-left: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #374151;
+      line-height: 1.55;
+    }
+    .instructor-card ul li::before {
+      content: "";
+      position: absolute;
+      left: 2px;
+      top: 9px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #94a3b8;
+    }
+    .proof-people-narrative {
+      max-width: 720px;
+      margin: 12px 0 0;
+      font-family: "RIDIBatang", "Batang", "Noto Serif KR", serif;
+      font-size: clamp(16px, 2.4vw, 19px);
+      line-height: 1.78;
+      font-weight: 400;
+      color: #1f2937;
+      text-align: center;
+    }
+    @media (max-width: 520px) {
+      .proof-people-section {
+        padding: 60px 18px 48px;
+        gap: 28px;
+      }
+      .instructor-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .instructor-card { padding: 24px 18px; }
+      .instructor-card h3 { font-size: 22px; }
+      .proof-people-narrative {
+        font-size: 15px;
+        line-height: 1.7;
+      }
+    }
+
+    /* ========================================
+       08 PROOF NUMBERS
+       ======================================== */
+    .proof-numbers-section {
+      background: #faf7ef;
+      padding: 84px 32px 64px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+    .proof-numbers-title {
+      margin: 0;
+      font-size: clamp(30px, 5vw, 42px);
+      font-weight: 900;
+      color: var(--ink);
+      text-align: center;
+      letter-spacing: -0.01em;
+    }
+    .proof-stat {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      width: 100%;
+      max-width: 880px;
+    }
+    .proof-stat-card {
+      background: #ffffff;
+      border: 1px solid #ecd9b0;
+      border-radius: 16px;
+      padding: 30px 18px 26px;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(120, 80, 0, 0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: center;
+    }
+    .proof-stat-card .num {
+      display: block;
+      font-family: "GmarketSans", "Pretendard Variable", sans-serif;
+      font-size: clamp(42px, 7vw, 58px);
+      font-weight: 800;
+      color: #b45309;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+    .proof-stat-card .num-text {
+      font-size: clamp(26px, 4vw, 34px);
+    }
+    .proof-stat-card .num small {
+      font-size: 0.42em;
+      margin-left: 2px;
+    }
+    .proof-stat-card .stat-label {
+      display: block;
+      margin-top: 6px;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: 0;
+    }
+    .proof-stat-card .stat-sub {
+      display: block;
+      margin-top: 2px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #6b5d3f;
+      line-height: 1.5;
+    }
+    .proof-belt {
+      width: 100%;
+      max-width: 880px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 18px 22px;
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid #e8d9b8;
+      border-radius: 12px;
+    }
+    .proof-belt-row {
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+      font-size: 13px;
+      line-height: 1.55;
+      color: #4b5563;
+    }
+    .proof-belt-row strong {
+      font-size: 13px;
+      font-weight: 800;
+      color: #92400e;
+      flex-shrink: 0;
+      min-width: 84px;
+    }
+    .proof-numbers-tail {
+      margin: 8px 0 0;
+      font-family: "RIDIBatang", "Batang", "Noto Serif KR", serif;
+      font-size: clamp(20px, 3.4vw, 26px);
+      font-weight: 400;
+      color: var(--ink);
+      text-align: center;
+      line-height: 1.55;
+    }
+    @media (max-width: 520px) {
+      .proof-numbers-section {
+        padding: 60px 18px 48px;
+        gap: 24px;
+      }
+      .proof-stat {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .proof-stat-card { padding: 24px 14px 22px; }
+      .proof-belt-row {
+        flex-direction: column;
+        gap: 2px;
+      }
+      .proof-belt-row strong { min-width: auto; }
+    }
+
+    /* ========================================
+       07 WHO WE ARE — 스토리 메인
+       ======================================== */
+    .who-we-are-section {
+      background: #ffffff;
+      padding: 96px 32px 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+    .who-story-headline {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(32px, 5.4vw, 46px);
+      font-weight: 900;
+      color: var(--ink);
+      text-align: center;
+      line-height: 1.32;
+      letter-spacing: -0.01em;
+    }
+    .who-story-body {
+      max-width: 660px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+    .who-story-paragraph {
+      margin: 0;
+      font-family: "RIDIBatang", "Batang", "Noto Serif KR", serif;
+      font-size: clamp(17px, 2.6vw, 20px);
+      line-height: 1.92;
+      font-weight: 400;
+      color: #1f2937;
+      text-align: center;
+      letter-spacing: 0.005em;
+    }
+    .who-story-emph {
+      font-weight: 700;
+      color: var(--ink);
+      border-bottom: 2px solid rgba(180, 83, 9, 0.42);
+      padding-bottom: 1px;
+    }
+    .who-story-closer {
+      margin-top: 8px;
+      font-size: clamp(20px, 3.2vw, 24px);
+      font-weight: 800;
+      color: var(--ink);
+    }
+    @media (max-width: 520px) {
+      .who-we-are-section {
+        padding: 68px 20px 56px;
+        gap: 30px;
+      }
+      .who-story-paragraph {
+        font-size: 16px;
+        line-height: 1.85;
+        text-align: left;
+      }
+      .who-story-headline {
+        line-height: 1.3;
+      }
+    }
+
+    /* ========================================
+       08 WHO MADE THIS — 간단 프로필
+       ======================================== */
+    .who-made-this-section {
+      background: #fafbfc;
+      padding: 72px 32px 84px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 36px;
+    }
+    .who-profile-intro {
+      margin: 0;
+      font-size: clamp(15px, 2.2vw, 17px);
+      font-weight: 700;
+      color: #6b7280;
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+    .who-profile-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      width: 100%;
+      max-width: 760px;
+    }
+    .who-profile-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+    }
+    .who-profile-photo {
+      width: 104px;
+      height: 104px;
+      border-radius: 50%;
+      background: #e6e8ef;
+      margin-bottom: 10px;
+    }
+    .who-profile-name {
+      margin: 0;
+      font-size: clamp(22px, 3.2vw, 26px);
+      font-weight: 900;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+    .who-profile-role {
+      margin: 2px 0 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #6b7280;
+      letter-spacing: 0.01em;
+    }
+    .who-profile-line {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 500;
+      color: #374151;
+      line-height: 1.55;
+      text-align: center;
+    }
+    .who-profile-line.who-profile-edu {
+      color: #6b7280;
+      font-size: 13px;
+    }
+    @media (max-width: 520px) {
+      .who-made-this-section {
+        padding: 56px 20px 64px;
+        gap: 28px;
+      }
+      .who-profile-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .who-profile-photo {
+        width: 92px;
+        height: 92px;
+      }
+    }
+
+    /* 08 WHO MADE THIS — 양력 풀버전 추가 */
+    .who-profile-headline {
+      margin: 4px 0 12px;
+      max-width: 720px;
+      font-size: clamp(28px, 4.6vw, 38px);
+      font-weight: 900;
+      color: var(--ink);
+      text-align: center;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+    }
+    .who-profile-block {
+      width: 100%;
+      margin-top: 14px;
+      text-align: left;
+    }
+    .who-profile-block .who-profile-label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      color: #9ca3af;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .who-profile-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .who-profile-list li {
+      position: relative;
+      padding-left: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #374151;
+      line-height: 1.55;
+    }
+    .who-profile-list li::before {
+      content: "";
+      position: absolute;
+      left: 2px;
+      top: 9px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #94a3b8;
+    }
+    .who-made-this-section .who-profile-card {
+      align-items: flex-start;
+      padding: 28px 24px 26px;
+      background: #fafbff;
+      border: 1px solid #e6e8ef;
+      border-radius: 14px;
+    }
+    .who-made-this-section .who-profile-photo,
+    .who-made-this-section .who-profile-name,
+    .who-made-this-section .who-profile-role {
+      align-self: center;
+    }
+    @media (max-width: 520px) {
+      .who-made-this-section .who-profile-card {
+        padding: 24px 18px;
+      }
+    }
+
+    /* ========================================
+       09 PROOF STATS — 인포그래픽
+       ======================================== */
+    .proof-stats-section {
+      background: #faf7ef;
+      padding: 88px 32px 88px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    .proof-stats-intro {
+      margin: 0;
+      font-size: clamp(14px, 2.2vw, 16px);
+      font-weight: 800;
+      color: #b45309;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .proof-stats-headline {
+      margin: 0 0 24px;
+      max-width: 760px;
+      font-size: clamp(28px, 4.6vw, 40px);
+      font-weight: 900;
+      color: var(--ink);
+      text-align: center;
+      line-height: 1.32;
+      letter-spacing: -0.01em;
+    }
+    .proof-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      width: 100%;
+      max-width: 640px;
+    }
+    .proof-stats-item {
+      position: relative;
+      padding: 36px 18px 30px;
+      background: #ffffff;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 10px 28px rgba(120, 80, 0, 0.07);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      border-top: 4px solid #b45309;
+    }
+    .proof-stats-num {
+      display: block;
+      font-family: "GmarketSans", "Pretendard Variable", sans-serif;
+      font-size: clamp(34px, 4.2vw, 46px);
+      font-weight: 800;
+      color: #b45309;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+    .proof-stats-num small {
+      font-size: 0.46em;
+      margin-left: 3px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .proof-stats-label {
+      display: block;
+      margin-top: 4px;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: 0;
+    }
+    .proof-stats-sub {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: #6b5d3f;
+      line-height: 1.55;
+    }
+    @media (max-width: 520px) {
+      .proof-stats-section {
+        padding: 64px 18px 72px;
+        gap: 18px;
+      }
+      .proof-stats-grid {
+        gap: 14px;
+      }
+      .proof-stats-item {
+        padding: 30px 14px 26px;
+      }
+    }
+
+    /* ========================================
+       09 PROOF STATS — 다크 대시보드 톤
+       ======================================== */
+    .proof-dash-section {
+      background: #0f1922;
+      color: #f1f5f9;
+      padding: 96px 32px 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+    .proof-dash-section .section-no {
+      color: rgba(241, 245, 249, 0.45);
+    }
+    .proof-dash-tag {
+      margin: 0;
+      font-size: 12px;
+      font-weight: 800;
+      color: #fbbf24;
+      letter-spacing: 0.32em;
+    }
+    .proof-dash-headline {
+      margin: 0 0 28px;
+      font-size: clamp(28px, 4.6vw, 42px);
+      font-weight: 900;
+      color: #ffffff;
+      text-align: center;
+      line-height: 1.32;
+      letter-spacing: -0.01em;
+    }
+    .proof-dash-grid {
+      width: 100%;
+      max-width: 760px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .proof-dash-item {
+      padding: 36px 20px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .proof-dash-item:nth-child(2n) { border-right: none; }
+    .proof-dash-item:nth-child(n+3) { border-bottom: none; }
+    .proof-dash-num {
+      display: block;
+      font-family: "GmarketSans", "Pretendard Variable", sans-serif;
+      font-size: clamp(38px, 5vw, 52px);
+      font-weight: 800;
+      color: #fbbf24;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+    .proof-dash-num small {
+      font-size: 0.42em;
+      margin-left: 3px;
+      font-weight: 700;
+      color: #fde68a;
+    }
+    .proof-dash-label {
+      display: block;
+      margin-top: 6px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0;
+    }
+    .proof-dash-sub {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(241, 245, 249, 0.55);
+      line-height: 1.55;
+    }
+    @media (max-width: 520px) {
+      .proof-dash-section {
+        padding: 72px 18px 76px;
+      }
+      .proof-dash-headline {
+        margin-bottom: 18px;
+      }
+      .proof-dash-item {
+        padding: 28px 12px 26px;
+      }
+      .proof-dash-label {
+        font-size: 13px;
+      }
+    }
+
+    /* ========================================
+       09 PROOF STATS — Journey 시안
+       ======================================== */
+    .proof-journey-section {
+      background: #0F1419;
+      color: #ffffff;
+      padding: 56px 20px 52px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    .proof-journey-section .section-no {
+      color: rgba(255, 255, 255, 0.45);
+    }
+    .proof-journey-headline {
+      margin: 0;
+      max-width: 720px;
+      font-size: clamp(32px, 5.6vw, 44px);
+      font-weight: 700;
+      color: #ffffff;
+      text-align: center;
+      line-height: 1.36;
+      letter-spacing: -0.005em;
+    }
+    .proof-journey-board {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      padding: 16px 0 8px;
+    }
+    .proof-journey-divider {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(245, 184, 46, 0.4), rgba(245, 184, 46, 0.4), transparent);
+      transform: translateX(-50%);
+    }
+    .proof-journey-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px 20px;
+    }
+    .proof-journey-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .proof-journey-item-left {
+      text-align: right;
+      padding-right: 22px;
+      align-items: flex-end;
+    }
+    .proof-journey-item-right {
+      text-align: left;
+      padding-left: 22px;
+      align-items: flex-start;
+    }
+    .proof-journey-tag {
+      font-size: 13px;
+      color: rgba(245, 184, 46, 0.85);
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .proof-journey-num-row {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .proof-journey-item-left .proof-journey-num-row {
+      justify-content: flex-end;
+    }
+    .proof-journey-num {
+      font-family: "GmarketSans", "Pretendard Variable", sans-serif;
+      font-size: clamp(44px, 7vw, 60px);
+      font-weight: 600;
+      color: #F5B82E;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+    .proof-journey-unit {
+      font-size: clamp(16px, 2.2vw, 18px);
+      color: rgba(255, 255, 255, 0.78);
+      white-space: nowrap;
+    }
+    .proof-journey-label {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.65);
+      margin-top: 8px;
+    }
+    .proof-journey-foot {
+      margin: 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: clamp(16px, 2.4vw, 19px);
+      color: rgba(255, 255, 255, 0.72);
+      font-weight: 500;
+      line-height: 1.65;
+      text-align: center;
+      width: 100%;
+      max-width: 720px;
+    }
+    @media (max-width: 520px) {
+      .proof-journey-section {
+        padding: 44px 14px 40px;
+        gap: 20px;
+      }
+      .proof-journey-board {
+        padding: 10px 0 4px;
+      }
+      .proof-journey-grid {
+        gap: 26px 14px;
+      }
+      .proof-journey-item-left {
+        padding-right: 14px;
+      }
+      .proof-journey-item-right {
+        padding-left: 14px;
       }
     }

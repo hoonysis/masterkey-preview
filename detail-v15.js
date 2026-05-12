@@ -59,11 +59,15 @@
       const motionObserver = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
+            const once = entry.target.classList.contains("motion-once");
             if (entry.isIntersecting) {
               entry.target.classList.remove("motion-in");
               void entry.target.offsetWidth;
               entry.target.classList.add("motion-in");
-            } else {
+              if (once) {
+                motionObserver.unobserve(entry.target);
+              }
+            } else if (!once) {
               entry.target.classList.remove("motion-in");
             }
           });
