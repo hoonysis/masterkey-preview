@@ -4456,11 +4456,12 @@
       padding: 8px 12px;
     }
     .who-profile-photo {
-      width: 104px;
-      height: 104px;
+      width: 128px;
+      height: 128px;
       border-radius: 50%;
       background: #e6e8ef;
-      margin-bottom: 10px;
+      object-fit: cover;
+      margin-bottom: 12px;
     }
     .who-profile-name {
       margin: 0;
@@ -4498,8 +4499,8 @@
         gap: 32px;
       }
       .who-profile-photo {
-        width: 92px;
-        height: 92px;
+        width: 112px;
+        height: 112px;
       }
     }
 
